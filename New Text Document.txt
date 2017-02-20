@@ -1,0 +1,4 @@
+var string = "Hello";
+var str = string.substring(0, string.length-1);
+alert(str);
+http://jsfiddle.net/d72ML/
