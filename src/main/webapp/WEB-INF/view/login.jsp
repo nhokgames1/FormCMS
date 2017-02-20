@@ -14,12 +14,13 @@
 <script src="../resources/js/jquery-ui.min.js"></script>
 <script src="../resources/js/angular.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/student.js"></script>
+<script src="../resources/js/User.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
 
 <script src="../resources/js/angular-route.js"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Login Page</title>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
 
@@ -36,27 +37,20 @@
 								<label for="inputEmail3" class="col-sm-3 control-label">
 									Email</label>
 								<div class="col-sm-9">
-									<input ng-model="user.name" type="text" class="form-control"
-										id="inputEmail3" placeholder="Email" >
+									<input ng-model="user.account" type="text" class="form-control"
+										id= placeholder="Account" >
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputPassword3" class="col-sm-3 control-label">
 									Password</label>
 								<div class="col-sm-9">
-									<input ng-model="user.subject" type="password"
-										class="form-control" id="inputPassword3"
+									<input ng-model="user.password" type="password"
+										class="form-control" 
 										placeholder="Password" >
 								</div>
 							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-3 col-sm-9">
-									<div class="checkbox">
-										<label> <input type="checkbox" /> Remember me
-										</label>
-									</div>
-								</div>
-							</div>
+							
 
 							<div class="form-group">
 								<label class="col-sm-3"></label>

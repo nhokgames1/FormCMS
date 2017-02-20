@@ -43,7 +43,7 @@ public class UserService {
 		boolean result = false;
 		User use = userdao.getUserByName(us.getAccount());
 		if (use != null) {
-			if (use.getAccount().equals(use.getPassword())) {
+			if (use.getAccount().equals(us.getAccount()) && use.getPassword().equals(us.getPassword())) {
 				result = true;
 			}
 		}

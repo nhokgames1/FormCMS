@@ -14,7 +14,7 @@
         id: 'textbox',
         component: 'textInput',
         label: 'Name',
-        description: 'Go way',
+        description: '',
         placeholder: 'Your name',
         required: true,
         editable: true
@@ -32,41 +32,41 @@
 
 
 
-      $http({
-         method: 'GET',
-                url     : '/Student/student',
-                data    : $scope.user, //forms user object
-                headers : {'Content-Type': 'application/json;charset=UTF-8'}
-      }).then(function success(response){
-        $scope.daa = 
-        console.log(response.data);
+      // $http({
+      //    method: 'GET',
+      //           url     : '/Student/student',
+      //           data    : $scope.user, //forms user object
+      //           headers : {'Content-Type': 'application/json;charset=UTF-8'}
+      // }).then(function success(response){
+      //   $scope.daa = 
+      //   console.log(response.data);
 
-          $scope.test= response.data[6].subject;
-          $scope.a=$scope.test.replace("[","");
-          $scope.b=$scope.a.replace("]","");
-          // console.log($scope.last);
+      //     $scope.test= response.data[6].subject;
+      //     $scope.a=$scope.test.replace("[","");
+      //     $scope.b=$scope.a.replace("]","");
+      //     // console.log($scope.last);
 
-          $scope.array= [];
-          $scope.array= angular.fromJson($scope.test);
+      //     $scope.array= [];
+      //     $scope.array= angular.fromJson($scope.test);
 
-          $scope.hehe = JSON.stringify($scope.array[0]);
-          console.log($scope.hehe);
-          $scope.data=angular.fromJson($scope.hehe);
-          // console.log($scope.array.length);
-          // console.log(angular.isObject($scope.hehe));
-          // for (i=0;i<$scope.array.length;i++) {
-          //   $builder.addFormObject('test',$scope.hehe);
-          // }
-          for (i=0;i<$scope.array.length;i++) {
-            $builder.addFormObject('test',angular.fromJson(JSON.stringify($scope.array[i])));
-          }
+      //     $scope.hehe = JSON.stringify($scope.array[0]);
+      //     console.log($scope.hehe);
+      //     $scope.data=angular.fromJson($scope.hehe);
+      //     // console.log($scope.array.length);
+      //     // console.log(angular.isObject($scope.hehe));
+      //     // for (i=0;i<$scope.array.length;i++) {
+      //     //   $builder.addFormObject('test',$scope.hehe);
+      //     // }
+      //     for (i=0;i<$scope.array.length;i++) {
+      //       $builder.addFormObject('test',angular.fromJson(JSON.stringify($scope.array[i])));
+      //     }
          
-           $builder.addFormObject('test',$scope.data);
-           console.log(angular.isObject($scope.data));
+      //      $builder.addFormObject('test',$scope.data);
+      //      console.log(angular.isObject($scope.data));
 
-      })
+      // })
       
-      // $builder.addFormObject('test',{"component":"textInput","editable":true,"index":0,"label":"Hi U","description":"Full Name","placeholder":"Tên của bạn","options":[],"required":false,"validation":"/.*/"});
+      // $builder.addFormObject('test',{"id":"textbox","component":"textInput","editable":true,"index":0,"label":"SDSDSD","description":"","placeholder":"Your name","options":[],"required":true,"validation":"/.*/","$$hashKey":"object:25"});
       // $builder.addFormObject('test',{"component":"radio","editable":true,"index":1,"label":"Radio",
       //   "description":"description",
       //   "placeholder":"placeholder",
@@ -76,7 +76,7 @@
       $scope.form = $builder.forms['default'];
      
       $scope.input = [];
-      console.log($scope.input);
+      // console.log($scope.input);
       $scope.defaultValue = {};
       $scope.defaultValue[textbox.id] = 'default value';
       $scope.defaultValue[checkbox.id] = [true, true];
@@ -112,8 +112,23 @@
       //  }
 
       return $scope.submit = function() {
-        console.log($scope.form);
-        console.log($scope.input);
+        
+        $scope.jString =angular.fromJson($scope.form);
+        $scope.hope= JSON.stringify($scope.form);
+
+        $scope.ToString = angular.toJson($scope.hope);
+        
+        console.log($scope.ToString);
+        // $scope.covert1 = $scope.ToString.replace("[","");
+        // $scope.covert2 = $scope.covert1.replace("]","")
+        // console.log($scope.covert2);
+       
+        $http({
+           method: 'POST',
+            url     : '/FormCMS/addForm',
+                data    : $scope.maybe, //forms user object
+                headers : {'Content-Type': 'application/json;charset=UTF-8'} 
+        })
        
 
 

@@ -5,8 +5,10 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 $scope.url  = 'http://localhost:8080/FormCMS/listUser';
 	 $http.get($scope.url,{header : {'Content-Type' : 'application/json; charset=UTF-8'}}).then(function(response) {
 	 $scope.arrStudent = response.data;
-	 $scope.user={};
+	
 	 console.log($scope.arrStudent);
+	 $scope.cookie=$cookieStore.get('user');
+	 			console.log($scope.cookie);
 
 	 //add user to server
 	 $scope.saveUser = function() {
@@ -34,7 +36,7 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 	console.log(user);
 	 	$http({
 	 		method: 'PUT',
-	 		url: '/Student/update/'+user.id,
+	 		url: '/FormCMS/update/'+user.id,
 	 		data : $scope.user,
 	 		headers : {'Content-Type': 'application/json; charset=UTF-8'}
 
@@ -46,7 +48,7 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 	
 	 	$http({
 	 		method: 'DELETE',
-	 		url: '/Student/delete/'+id,
+	 		url: '/FormCMS/delete/'+id,
 	 		headers : {'Content-Type': 'application/json'}
 	 	})
 
@@ -55,7 +57,7 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 	console.log($scope.user);
 	 	$http({
 	 		method: 'POST',
-        		url     : '/Student/login',
+        		url     : '/FormCMS/login',
                 data    : $scope.user, //forms user object
                 headers : {'Content-Type': 'application/json;charset=UTF-8'} 
 	 	})
@@ -63,7 +65,9 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 		$scope.data=response.data;
 	 		console.log($scope.data);
 	 		if ($scope.data==true) {
-	 			window.location.href = "http://localhost:8080/Student/home";
+	 			window.location.href = "http://localhost:8080/FormCMS/home";
+	 			
+
 
 	 		}
 	 		else 

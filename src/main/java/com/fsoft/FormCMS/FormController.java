@@ -1,5 +1,49 @@
 package com.fsoft.FormCMS;
 
-public class FormController {
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.fsoft.FormCMS.model.Form;
+import com.fsoft.FormCMS.services.FormService;
+
+@RestController
+public class FormController {
+	@Autowired
+	private FormService formservice;
+	
+
+	@RequestMapping(value = "/addForm", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public ModelAndView addform() {
+		return new ModelAndView("addform");
+	}
+	@RequestMapping(value = "/listForm", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public List<Form> getAllForm() {
+		return formservice.listForm();
+	}
+	@RequestMapping(value = "/addForm", method = RequestMethod.POST, produces = { "application/json; charset=UTF-8" })
+	@ResponseBody
+	public void add(@RequestBody Form form) {
+		formservice.add(form);
+	}
+	@RequestMapping(value = "/deleteForm/{id}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void delete(@PathVariable("id")Long id) {
+		formservice.delete(id);
+	}
+	@RequestMapping(value = "/updateForm/{id}", method = RequestMethod.PUT, produces = {
+	"application/json; charset=UTF-8" })
+	@ResponseBody
+	public void update(@PathVariable("id") Long id, @RequestBody Form form) {
+		formservice.update(id, form);
+	}
 }

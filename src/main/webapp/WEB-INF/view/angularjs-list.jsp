@@ -146,13 +146,14 @@
 					<td>{{user.fullname}}</td>
 					<td>{{user.password}}</td>
 					<td>{{user.birthday}}</td>
+					<td>{{user.role}}</td>
 					<td>
 						<button type="button" class="btn btn-info btn-lg"
 							data-toggle="modal" data-target="#myModalEdit"
-							ng-click="selectUser(student)">Edit</button>
+							ng-click="selectUser(user)">Edit</button>
 						<button type="button" class="btn btn-info btn-lg"
 							data-toggle="modal" data-target="#myModalDelete"
-							ng-click="selectUser(student)">Delete</button>
+							ng-click="selectUser(user)">Delete</button>
 
 					</td>
 				</tr>
@@ -302,8 +303,8 @@
 							<label for="inputEnd" class="col-sm-2 control-label">Birthday
 								day</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control"
-									ng-value="clickedUser.birthday" placeholder="End day">
+								<input type="date" class="form-control"
+									ng-value="clickedUser.birthday | date:'yyyy-MM-dd" placeholder="Birthday">
 							</div>
 						</div>
 						<div class="form-group">

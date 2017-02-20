@@ -2,6 +2,9 @@ package com.fsoft.FormCMS;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,13 +24,13 @@ public class UserController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
-	public ModelAndView home() {
+	public ModelAndView loginPage() {
 		return new ModelAndView("login");
 	}
 
 	@RequestMapping(value = "/home")
 	@ResponseBody
-	public ModelAndView loginPage() {
+	public ModelAndView home() {
 		return new ModelAndView("angularjs-list");
 	}
 
@@ -62,16 +65,19 @@ public class UserController {
 	public void updateUser(@PathVariable("id") Long id, @RequestBody User user) {
 		userservice.update(id, user);
 	}
-	
 
-	// @RequestMapping(value = "/login", method = RequestMethod.POST, produces =
-	// { "application/json; charset=UTF-8" })
-	// @ResponseBody
-	// public boolean login(@RequestBody User user) {
-	// if (studentservice.checkLogin(student) == true) {
-	// return true;
-	// } else {
-	// return false;
-	// }
-	// }
+	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = { "application/json; charset=UTF-8" })
+	@ResponseBody
+	public boolean login(@RequestBody User user,HttpServletRequest request,HttpSession session) {
+		if (userservice.login(user) == true) {
+			
+			HttpSession s =request.getSession();
+			s.invalidate();
+			s.setAttribute("user", user);
+			
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
