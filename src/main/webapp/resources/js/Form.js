@@ -1,5 +1,5 @@
 var app = angular.module('myapp', []);
-
+	
 app.controller('myCtrl', function($scope,$http,$window) {
 	
 	 $scope.url  = 'http://localhost:8080/FormCMS/listForm';

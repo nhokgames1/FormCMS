@@ -1,5 +1,4 @@
-(function() {
-  angular.module('app', ['builder', 'builder.components', 'validator.rules']).run([
+	  var app= angular.module('app', ['builder', 'builder.components', 'validator.rules']).run([
     '$builder', function($builder) {
       $builder.registerComponent('sampleInput', {});
       return $builder.registerComponent('name', {});
@@ -10,7 +9,7 @@
   .controller('DemoController', [
     '$scope', '$builder', '$validator','$http', function($scope, $builder, $validator,$http) {
       var checkbox, textbox,test;
-      textbox = $builder.addFormObject('default', {
+      textbox = $builder.addFormObject('tester', {
         id: 'textbox',
         component: 'textInput',
         label: 'Name',
@@ -19,7 +18,7 @@
         required: true,
         editable: true
       });
-      checkbox = $builder.addFormObject('default', {
+      checkbox = $builder.addFormObject('tester', {
         id: 'checkbox',
         component: 'checkbox',
         label: 'Pets',
@@ -66,8 +65,8 @@
 
       // })
       
-       $builder.addFormObject('test',{"id":"textbox","component":"textInput","editable":true,"index":0,"label":"SDSDSD","description":"","placeholder":"Your name","options":[],"required":true,"validation":"/.*/","$$hashKey":"object:25"});
-       $builder.addFormObject('test',{"component":"radio","editable":true,"index":1,"label":"Radio",
+       $builder.addFormObject('default',{"id":"textbox","component":"textInput","editable":true,"index":0,"label":"SDSDSD","description":"","placeholder":"Your name","options":[],"required":true,"validation":"/.*/","$$hashKey":"object:25"});
+       $builder.addFormObject('default',{"component":"radio","editable":true,"index":1,"label":"Radio",
          "description":"description",
          "placeholder":"placeholder",
          "options":["value one","value two"],"required":false,"validation":"/.*/"});
@@ -126,4 +125,3 @@
   ]);
 
 
-}).call(this);

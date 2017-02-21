@@ -2,6 +2,9 @@ package com.fsoft.FormCMS;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fsoft.FormCMS.model.Form;
+import com.fsoft.FormCMS.model.User;
 import com.fsoft.FormCMS.services.FormService;
 
 @RestController
@@ -19,12 +23,19 @@ public class FormController {
 	@Autowired
 	private FormService formservice;
 	
-
-	@RequestMapping(value = "/addForm", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+//get Role of user to permit log to addForm Page
+	@RequestMapping(value = "/addFormPage", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
-	public ModelAndView addform() {
-		return new ModelAndView("addform");
-	}
+	public ModelAndView addform(HttpServletRequest request,HttpSession session) {
+		HttpSession s =request.getSession();
+		User us=(User) s.getAttribute("user");
+		if (us.getRole().equals("admin")) {
+			return new ModelAndView("addform");
+			}
+		else {
+			s.invalidate();
+		return new ModelAndView("login");
+	}}
 	@RequestMapping(value = "/listForm", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
 	public List<Form> getAllForm() {

@@ -15,7 +15,7 @@
     <script type="text/javascript" src="../resources/js/angular-form-builder-components.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator.min.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator-rules.min.js"></script>
-    <script type="text/javascript" src="../resources/js/Form.js"></script>
+    <script type="text/javascript" src="../resources/js/demoform.js"></script>
 <title>Insert title here</title>
 </head>
 <body class="container" ng-controller="DemoController">
@@ -61,7 +61,7 @@
         <h2>Form</h2>
         <hr/>
         <form class="form-horizontal">
-            <div ng-model="input" fb-form="test" fb-default="defaultValue"></div>
+            <div ng-model="input" fb-form="default" fb-default="defaultValue"></div>
             <div class="form-group">
                 <div class="col-md-8 col-md-offset-4">
                     <input type="submit" ng-click="add()" class="btn btn-default"/>
