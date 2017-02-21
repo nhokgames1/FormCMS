@@ -46,4 +46,14 @@ public class FormController {
 	public void update(@PathVariable("id") Long id, @RequestBody Form form) {
 		formservice.update(id, form);
 	}
+	@RequestMapping(value = "/student", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public ModelAndView studentPage() {
+		return new ModelAndView("student-home");
+	}
+	@RequestMapping(value = "/test", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public ModelAndView test() {
+		return new ModelAndView("test");
+	}
 }

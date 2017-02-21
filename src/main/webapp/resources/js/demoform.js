@@ -66,11 +66,11 @@
 
       // })
       
-      // $builder.addFormObject('test',{"id":"textbox","component":"textInput","editable":true,"index":0,"label":"SDSDSD","description":"","placeholder":"Your name","options":[],"required":true,"validation":"/.*/","$$hashKey":"object:25"});
-      // $builder.addFormObject('test',{"component":"radio","editable":true,"index":1,"label":"Radio",
-      //   "description":"description",
-      //   "placeholder":"placeholder",
-      //   "options":["value one","value two"],"required":false,"validation":"/.*/"});
+       $builder.addFormObject('test',{"id":"textbox","component":"textInput","editable":true,"index":0,"label":"SDSDSD","description":"","placeholder":"Your name","options":[],"required":true,"validation":"/.*/","$$hashKey":"object:25"});
+       $builder.addFormObject('test',{"component":"radio","editable":true,"index":1,"label":"Radio",
+         "description":"description",
+         "placeholder":"placeholder",
+         "options":["value one","value two"],"required":false,"validation":"/.*/"});
 
           
       $scope.form = $builder.forms['default'];
@@ -112,27 +112,6 @@
       //  }
 
       return $scope.submit = function() {
-        
-        $scope.jString =angular.fromJson($scope.form);
-        $scope.hope= JSON.stringify($scope.form);
-
-        $scope.ToString = angular.toJson($scope.hope);
-        
-        console.log($scope.ToString);
-        // $scope.covert1 = $scope.ToString.replace("[","");
-        // $scope.covert2 = $scope.covert1.replace("]","")
-        // console.log($scope.covert2);
-       
-        $http({
-           method: 'POST',
-            url     : '/FormCMS/addForm',
-                data    : $scope.maybe, //forms user object
-                headers : {'Content-Type': 'application/json;charset=UTF-8'} 
-        })
-       
-
-
-
         return $validator.validate($scope, 'default').success(function() {
           return console.log('success');
         }).error(function() {
