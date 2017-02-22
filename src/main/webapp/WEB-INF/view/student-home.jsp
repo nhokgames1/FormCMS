@@ -130,10 +130,6 @@
 			</nav> </header>
 		</div>
 		<h1>List student</h1>
-
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-			data-target="#myModalAdd" ng-click="selectUser(user)">Add</button>
-
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -154,10 +150,8 @@
 					<td>
 						<button type="button" class="btn btn-info btn-lg"
 							data-toggle="modal" data-target="#myModalEdit"
-							ng-click="selectUser(formlist)">Edit</button>
-						<button type="button" class="btn btn-info btn-lg"
-							data-toggle="modal" data-target="#myModalDelete"
-							ng-click="selectUser(user)">Delete</button>
+							ng-click="try(formlist)">Input</button>
+
 
 					</td>
 				</tr>
@@ -167,107 +161,43 @@
 	</div>
 
 
-	<!--Edit -->
-	<div id="myModalEdit" class="modal fade" role="dialog" ng-app="app"  ng-controller="DemoController">
+	<!-- Main Modal  -->
+	<div id="myModalEdit" class="modal fade" role="dialog" ng-app="app"
+		ng-controller="DemoController">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">
-						Edit User
-					</h4>
+					<h4 class="modal-title">Form Input</h4>
 				</div>
 				<div class="modal-body">
 
-					<div >
-						<h2>Form</h2>
-						<hr />
-						
-						<!-- form here -->
-						 <!-- <div class="row">
-        <h1>angular-form-builder</h1>
-        <hr/>
-
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Builder</h3>
-                </div>
-                <div fb-builder="default"></div>
-                <div class="panel-footer">
-                    <div class="checkbox">
-                        <label><input type="checkbox" ng-model="isShowScope" />
-                            Show scope
-                        </label>
-                    </div>
-                    <pre ng-if="isShowScope">{{form}}</pre>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div fb-components></div>
-        </div>
-    </div>
- --><button type="button" class="btn btn-info btn-lg"
-							data-toggle="modal" data-target="#myModalDelete"
-							ng-click="selectUser(user)">Delete</button>
- <div id="myModalDelete" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Are you sure ?</h4>
-				</div>
-				<div class="modal-body">
-				<div class="row">
-        <h2>Form</h2>
-        <hr/>
-        <form class="form-horizontal">
-            <div ng-model="input" fb-form="test" fb-default="defaultValue"></div>
-            <div class="form-group">
-                <div class="col-md-8 col-md-offset-4">
-                    <input type="submit" ng-click="add()" class="btn btn-default"/>
-                </div>
-            </div>
-        </form>
-        <div class="checkbox">
-            <label><input type="checkbox" ng-model="isShowScope" ng-init="isShowScope=true" />
-                Show scope
-            </label>
-        </div>
-        <pre ng-if="isShowScope">{{input}}</pre>
-    </div>
-				
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal"
-						ng-click="deleteUser(clickedUser.id)">Yes</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-    
-    <div class="row">
-        <div class="col-md-12 footer"></div>
-    </div>
-						<div class="checkbox">
-							<label><input type="checkbox" ng-model="isShowScope"
-								ng-init="isShowScope=true" /> Show scope </label>
+					<div>
+						<div class="row">
+							<h2>Form</h2>
+							<hr />
+							<form class="form-horizontal">
+								<div ng-model="input" fb-form="building"
+									fb-default="defaultValue"></div>
+								<div class="form-group">
+									<div class="col-md-8 col-md-offset-4">
+										<input type="submit" ng-click="add()" class="btn btn-default" />
+									</div>
+								</div>
+							</form>
+							<!-- <div class="checkbox">
+								<label><input type="checkbox" ng-model="isShowScope"
+									ng-init="isShowScope=true" /> Show scope </label>
+							</div>
+							<pre ng-if="isShowScope">{{input}}</pre> -->
 						</div>
-						<pre ng-if="isShowScope">{{input}}</pre>
 					</div>
 
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default"
-						ng-click="updateUser(clickedUser)" data-dismiss="modal">Save</button>
+						ng-click="submit()" data-dismiss="modal">Save</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>

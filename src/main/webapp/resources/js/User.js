@@ -75,11 +75,4 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 			
 	 	})
 	 }
-// app.controller('Add',function($scope) {
-// 	$scope.user={};
-// 	$scope.saveUser= function(){
-// 		console.log($scope.user);
-// 	}
-// })	 
-
-	});
+ 	});
