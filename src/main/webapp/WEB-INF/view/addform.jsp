@@ -15,7 +15,7 @@
     <script type="text/javascript" src="../resources/js/angular-form-builder-components.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator.min.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator-rules.min.js"></script>
-    <script type="text/javascript" src="../resources/js/demoform.js"></script>
+    <script type="text/javascript" src="../resources/js/addform.js"></script>
 <title>Create New Form</title>
 </head>
 <body class="container" ng-controller="DemoController">
