@@ -74,7 +74,7 @@
 							Management</span> <b class="caret"></b>
 						<div class="ripple-container"></div></a>
 					<ul class="dropdown-menu account-setting-menu">
-						<li><a href="#" data-ga="" data-ga-action="click"
+						<li><a href="/home" data-ga="" data-ga-action="click"
 							data-ga-category="Header Navigation " data-ga-title="Slack">
 								List</a></li>
 						<li><a href="#" data-ga="" data-ga-action="click"
@@ -112,7 +112,7 @@
 						<li><a href="#" data-ga="" data-ga-action="click"
 							data-ga-category="Header Navigation " data-ga-title="Slack">
 								Hello User</a></li>
-						<li><a href="#" data-ga="" data-ga-action="click"
+						<li><a href="/FormCMS/logout" data-ga="" data-ga-action="click"
 							data-ga-category="Header Navigation " data-ga-title="Balsamiq">
 								Log Out</a></li>
 					</ul>

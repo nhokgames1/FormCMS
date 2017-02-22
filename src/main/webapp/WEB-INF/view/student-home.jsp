@@ -16,7 +16,7 @@
 <script src="../resources/js/jquery-ui.min.js"></script>
 <script src="../resources/js/angular.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/Form.js"></script>
+<script src="../resources/js/demoform.js"></script>
 <script src="../resources/js/dropdown.js"></script>
 <script type="text/javascript"
 	src="../resources/js/angular-form-builder.js"></script>
@@ -33,7 +33,7 @@
 
 </head>
 
-<body ng-app="myapp" ng-controller="myCtrl">
+<body ng-app="app" ng-controller="DemoController">
 
 
 	<div class="container">
@@ -166,105 +166,6 @@
 
 	</div>
 
-	<div id="myModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Are you sure ?</h4>
-				</div>
-				<div class="modal-body">
-					<strong style="color: red;"> You are going to delete
-						{{clickedUser.account}} </strong>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal"
-						ng-click="deleteUser(clickedUser.id)">Yes</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<!-- Delete-->
-	<div id="myModalDelete" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Are you sure ?</h4>
-				</div>
-				<div class="modal-body">
-					<strong style="color: red;"> You are going to delete
-						{{clickedUser.account}} </strong>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal"
-						ng-click="deleteUser(clickedUser.id)">Yes</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-
-	<!-- Modal  Add-->
-	<div id="myModalAdd" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Add New User</h4>
-				</div>
-				<div class="modal-body">
-
-					<div class="form-group">
-						<label for="account">Account</label> <input type="text"
-							class="form-control" ng-model="user.account">
-					</div>
-					<div class="form-group">
-						<label for="fullname">Fullname</label> <input type="text"
-							class="form-control" ng-model="user.fullname">
-					</div>
-					<div class="form-group">
-						<label for="text">Pasword</label> <input type="text"
-							class="form-control" ng-model="user.password">
-					</div>
-					<div class="form-group">
-						<label for="text">Birthday</label> <input type="date"
-							class="form-control" ng-model="user.birthday">
-					</div>
-
-					<div class="form-group">
-						<label for="redRadio">User</label> <input id="redRadio"
-							type="radio" ng-model="user.role" value="user" /><br /> <label
-							for="greenRadio">Admin</label> <input id="greenRadio"
-							type="radio" ng-model="user.role" value="admin" /><br />
-					</div>
-
-
-
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button id="btnAddUser" ng-click="saveUser()"
-						class="btn btn-default" type="button" data-dismiss="modal">Add</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-
-		</div>
-	</div>
 
 	<!--Edit -->
 	<div id="myModalEdit" class="modal fade" role="dialog" ng-app="app"  ng-controller="DemoController">

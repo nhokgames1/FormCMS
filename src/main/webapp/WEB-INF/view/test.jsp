@@ -44,20 +44,9 @@
             <div fb-components></div>
         </div>
     </div>
- --><button type="button" class="btn btn-info btn-lg"
-							data-toggle="modal" data-target="#myModalDelete"
-							ng-click="selectUser(user)">Delete</button>
- <div id="myModalDelete" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Are you sure ?</h4>
-				</div>
-				<div class="modal-body">
-				<div class="row">
+    
+ -->
+ <div class="row">
         <h2>Form</h2>
         <hr/>
         <form class="form-horizontal">
@@ -75,6 +64,22 @@
         </div>
         <pre ng-if="isShowScope">{{input}}</pre>
     </div>
+				
+ <button type="button" class="btn btn-info btn-lg"
+							data-toggle="modal" data-target="#myModalDelete"
+							ng-click="try(user)">Try</button>
+ <div id="myModalDelete" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Are you sure ?</h4>
+				</div>
+				<div class="modal-body">
+				
+				<!-- here -->
 				
 				</div>
 				<div class="modal-footer">

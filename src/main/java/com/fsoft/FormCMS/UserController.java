@@ -30,8 +30,9 @@ public class UserController {
 
 	@RequestMapping(value = "/home")
 	@ResponseBody
-	public ModelAndView home() {
+	public ModelAndView home(HttpServletRequest request, HttpSession session) {
 		return new ModelAndView("angularjs-list");
+		
 	}
 
 	@RequestMapping(value = "/listUser", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
@@ -68,16 +69,22 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = { "application/json; charset=UTF-8" })
 	@ResponseBody
-	public boolean login(@RequestBody User user,HttpServletRequest request,HttpSession session) {
+	public boolean login(@RequestBody User user, HttpServletRequest request, HttpSession session) {
 		if (userservice.login(user) == true) {
-			
-			HttpSession s =request.getSession();
-			s.invalidate();
+			HttpSession s = request.getSession();
 			s.setAttribute("user", user);
-			
+
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	@RequestMapping(value = "/logout")
+	@ResponseBody
+	public ModelAndView logout(HttpServletRequest request, HttpSession session) {
+		HttpSession s = request.getSession();
+		s.invalidate();
+		return new ModelAndView("login");
 	}
 }

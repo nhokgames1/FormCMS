@@ -26,7 +26,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-7">
+			<div class="col-md-6 col-md-offset-3" style="margin-top: 300px">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<span class="glyphicon glyphicon-lock"></span> Login

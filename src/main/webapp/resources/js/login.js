@@ -5,7 +5,7 @@ app.config(function ($routeProvider){
 		templateUrl:'page.html'
 	})
 	.when('/login',{
-		templateUrl:'http://localhost:8080/Student/home'
+		templateUrl:'http://localhost:8080/FormCMS/home'
 	})
 	.otherwise({
 		redirectTo: '/'
