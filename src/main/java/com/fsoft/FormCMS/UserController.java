@@ -30,9 +30,19 @@ public class UserController {
 
 	@RequestMapping(value = "/home")
 	@ResponseBody
-	public ModelAndView home(HttpServletRequest request, HttpSession session) {
-		return new ModelAndView("angularjs-list");
+	public ModelAndView home(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		User usersession=(User) session.getAttribute("user");
+		if (usersession.getRole().equals("admin")) {
+			return new ModelAndView("redirect:/FormCMS/admin");
+		}
+						return new ModelAndView("redirect:/FormCMS/student");
 		
+	}
+	@RequestMapping(value = "/admin", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public ModelAndView adminPage() {
+		return new ModelAndView("adminPage");
 	}
 
 	@RequestMapping(value = "/listUser", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
@@ -72,8 +82,9 @@ public class UserController {
 	public boolean login(@RequestBody User user, HttpServletRequest request, HttpSession session) {
 		if (userservice.login(user) == true) {
 			HttpSession s = request.getSession();
-			s.setAttribute("user", user);
-
+			User usersession=userservice.getUserByName(user.getAccount());			
+			s.setAttribute("user", usersession);	
+			s.setAttribute("userName", usersession.getAccount());
 			return true;
 		} else {
 			return false;

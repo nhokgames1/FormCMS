@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fsoft.FormCMS.model.Form;
+import com.fsoft.FormCMS.model.User;
 import com.fsoft.FormCMS.services.FormService;
 
 @RestController
@@ -25,13 +26,15 @@ public class FormController {
 	// get Role of user to permit log to addForm Page
 	@RequestMapping(value = "/addFormPage", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
-	public ModelAndView addform(HttpServletRequest request, HttpSession session) {
+	public ModelAndView addform(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		User usersession=(User) session.getAttribute("user");
+		if (usersession.getRole().equals("admin")) {
+			return new ModelAndView("addform");
+		}
+						return new ModelAndView("redirect:/FormCMS/student");
 		
-
-		return new ModelAndView("addform");
-
 	}
-
 	@RequestMapping(value = "/listForm", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
 	public List<Form> getAllForm() {

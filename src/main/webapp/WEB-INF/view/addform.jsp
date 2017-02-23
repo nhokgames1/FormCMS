@@ -19,6 +19,7 @@
 <title>Create New Form</title>
 </head>
 <body class="container" ng-controller="DemoController">
+<jsp:include page="header.jsp"></jsp:include>
    <div class="row">
         
         <hr/>
@@ -30,13 +31,7 @@
                 </div>
                 <div fb-builder="default"></div>
                 <div class="panel-footer">
-                    <div class="checkbox">
-                        <label><input type="checkbox" ng-model="isShowScope" />
-                            Show scope
-                        </label>
-                    </div>
-                    <pre ng-if="isShowScope">{{form}}</pre>
-                </div>
+                                  </div>
             </div>
         </div>
 

@@ -15,11 +15,11 @@
     <script type="text/javascript" src="../resources/js/angular-form-builder-components.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator.min.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator-rules.min.js"></script>
-    <script type="text/javascript" src="../resources/js/demoform.js"></script>
+    <script type="text/javascript" src="../resources/js/handleform.js"></script>
 <title>Insert title here</title>
 </head>
 <body class="container" ng-controller="DemoController">
-    <!-- <div class="row">
+   <div class="row">
         <h1>angular-form-builder</h1>
         <hr/>
 
@@ -28,7 +28,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Builder</h3>
                 </div>
-                <div fb-builder="default"></div>
+                <div fb-builder="test"></div>
                 <div class="panel-footer">
                     <div class="checkbox">
                         <label><input type="checkbox" ng-model="isShowScope" />
@@ -44,8 +44,7 @@
             <div fb-components></div>
         </div>
     </div>
-    
- -->
+
  <div class="row">
         <h2>Form</h2>
         <hr/>

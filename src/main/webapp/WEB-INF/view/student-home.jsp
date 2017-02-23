@@ -16,7 +16,7 @@
 <script src="../resources/js/jquery-ui.min.js"></script>
 <script src="../resources/js/angular.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/demoform.js"></script>
+<script src="../resources/js/handleform.js"></script>
 <script src="../resources/js/dropdown.js"></script>
 <script type="text/javascript"
 	src="../resources/js/angular-form-builder.js"></script>
@@ -38,97 +38,7 @@
 
 	<div class="container">
 		<!-- Header -->
-		<div class="headerWrapper container-fluid fixed-navbar">
-			<header style="padding: 15px 0px; height: 70px;"> <nav
-				class="navbar navbar-default navbar-static-top hidden-sm hidden-md hidden-lg mainContainer">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle"
-					ng-click="showNavMobile($event)" data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation Mobile "
-					data-ga-title="Open Mobile Nav Lnk">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a href="#" class="pull-left" data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation" data-ga-title="Logo CF Img"><img
-					class="cf-logo" src="../resources/img/cms_icon.png"></a> <a
-					class="navbar-brand logo-text" data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation " data-ga-title="Logo CF Img"
-					href="#"> <span>Home</span>
-				</a>
-			</div>
-			</nav> <nav
-				class="navbar navbar-default navbar-static-top hidden-xs mainContainer"
-				role="navigation">
-			<div class="navbar-header">
-				<a data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation " data-ga-title="Logo CF Img"
-					href="#" class="pull-left"> <img class="cf-logo"
-					src="../resources/img/cms_icon.png" height="40" width="40">
-				</a> <a class="navbar-brand logo-text" data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation " data-ga-title="Logo CF Img"
-					href="#"> <span>Content Management System</span>
-				</a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
-
-
-				</li>
-				<li class="dropdown" data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation " data-ga-title="Integrations">
-					<a href="javascript:void(0);" data-target="#"
-					class="dropdown-toggle" data-toggle="dropdown"
-					aria-expanded="false"> <span class="account-setting">User
-							Management</span> <b class="caret"></b>
-						<div class="ripple-container"></div></a>
-					<ul class="dropdown-menu account-setting-menu">
-						<li><a href="#" data-ga="" data-ga-action="click"
-							data-ga-category="Header Navigation " data-ga-title="Slack">
-								List</a></li>
-						<li><a href="#" data-ga="" data-ga-action="click"
-							data-ga-category="Header Navigation " data-ga-title="Balsamiq">
-								Add New</a></li>
-					</ul>
-				</li>
-
-				<li class="dropdown" data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation " data-ga-title="Integrations">
-					<a href="javascript:void(0);" data-target="#"
-					class="dropdown-toggle" data-toggle="dropdown"
-					aria-expanded="false"> <span class="account-setting">Form
-							Management</span> <b class="caret"></b>
-						<div class="ripple-container"></div></a>
-					<ul class="dropdown-menu account-setting-menu">
-						<li><a href="#" data-ga="" data-ga-action="click"
-							data-ga-category="Header Navigation " data-ga-title="Slack">
-								List</a></li>
-						<li><a href="#" data-ga="" data-ga-action="click"
-							data-ga-category="Header Navigation " data-ga-title="Balsamiq">
-								Add New</a></li>
-					</ul>
-				</li>
-
-
-				<li class="dropdown" data-ga="" data-ga-action="click"
-					data-ga-category="Header Navigation " data-ga-title="Integrations">
-					<a href="javascript:void(0);" data-target="#"
-					class="dropdown-toggle" data-toggle="dropdown"
-					aria-expanded="false"> <span class="account-setting">Account</span>
-						<b class="caret"></b>
-						<div class="ripple-container"></div></a>
-					<ul class="dropdown-menu account-setting-menu">
-						<li><a href="#" data-ga="" data-ga-action="click"
-							data-ga-category="Header Navigation " data-ga-title="Slack">
-								Hello User</a></li>
-						<li><a href="#" data-ga="" data-ga-action="click"
-							data-ga-category="Header Navigation " data-ga-title="Balsamiq">
-								Log Out</a></li>
-					</ul>
-				</li>
-
-			</ul>
-			</nav> </header>
-		</div>
+		<jsp:include page="header.jsp"></jsp:include>
 		<h1>List student</h1>
 		<table class="table table-striped">
 			<thead>
@@ -175,29 +85,24 @@
 
 					<div>
 						<div class="row">
-							<h2>Form</h2>
+							<h2>Form </h2>
 							<hr />
 							<form class="form-horizontal">
 								<div ng-model="input" fb-form="building"
 									fb-default="defaultValue"></div>
+								
 								<div class="form-group">
-									<div class="col-md-8 col-md-offset-4">
-										<input type="submit" ng-click="add()" class="btn btn-default" />
-									</div>
+									<div class="col-md-8 col-md-offset-4"></div>
 								</div>
 							</form>
-							<!-- <div class="checkbox">
-								<label><input type="checkbox" ng-model="isShowScope"
-									ng-init="isShowScope=true" /> Show scope </label>
-							</div>
-							<pre ng-if="isShowScope">{{input}}</pre> -->
+
 						</div>
 					</div>
 
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default"
-						ng-click="submit()" data-dismiss="modal">Save</button>
+					<button type="button" class="btn btn-default" ng-click="submit(input)"
+						data-dismiss="modal">Save</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>

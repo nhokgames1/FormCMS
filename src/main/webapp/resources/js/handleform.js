@@ -1,7 +1,7 @@
  var app= angular.module('app', ['builder', 'builder.components', 'validator.rules']).run([
     '$builder', function($builder) {
       $builder.registerComponent('sampleInput', {});
-      return $builder.registerComponent('name', {});
+     
     }
   ])
 
@@ -22,46 +22,52 @@
       // console.log(formlist);
       $builder.removeFormObject 
       $scope.tempdata =formlist;
-      console.log($scope.tempdata.formdata);
+      // console.log($scope.tempdata.formdata);
       $scope.array =[];
       $scope.array = angular.fromJson($scope.tempdata.formdata);
-      console.log ($scope.array);
+      
         for (i=0;i<$scope.array.length;i++) {
           $builder.removeFormObject('building',$scope.array.length);
           $builder.addFormObject('building',$scope.array[i]);
         }
 
       var checkbox, textbox,test;
-      textbox = $builder.addFormObject('default', {
+      textbox = $builder.addFormObject('test', {
         id: 'textbox',
         component: 'textInput',
-        label: 'Name',
+        label: 'hehehe',
         description: '',
-        placeholder: 'Your name',
+        placeholder: 'Tester',
         required: true,
         editable: true
       });
-      checkbox = $builder.addFormObject('default', {
+      checkbox = $builder.addFormObject('test', {
         id: 'checkbox',
         component: 'checkbox',
         label: 'Pets',
         description: 'Do you have any pets?',
         options: ['Dog', 'Cat']
       });
-      $builder.addFormObject('default', {
+      $builder.addFormObject('test', {
         component: 'sampleInput'
       });        
-      $scope.form = $builder.forms['default'];   
+      $scope.form = $builder.forms['building'];   
       $scope.input = [];
       $scope.defaultValue = {};
       $scope.defaultValue[textbox.id] = 'default value';
-      $scope.defaultValue[checkbox.id] = [true, true];
-
-      return $scope.submit = function() {
-        console.log('ok i"m in');
+      $scope.defaultValue[checkbox.id] = [true];
+      
+         $scope.submit = function(input) {
+        
+        $scope.test= input;
+         console.log($scope.test);
+        
+        
       };
-     }     
+     }
+
     }
+
   ]);
 
 
