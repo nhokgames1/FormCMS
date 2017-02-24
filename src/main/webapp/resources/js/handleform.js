@@ -57,10 +57,10 @@
       $scope.defaultValue[textbox.id] = 'default value';
       $scope.defaultValue[checkbox.id] = [true];
       
-         $scope.submit = function(input) {
-        
-        $scope.test= input;
-         console.log($scope.test);
+      $scope.submit = function(input) {
+         
+          
+         console.log($scope.name);
         
         
       };

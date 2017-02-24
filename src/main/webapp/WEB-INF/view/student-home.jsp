@@ -81,28 +81,23 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Form Input</h4>
 				</div>
-				<div class="modal-body">
-
-					<div>
-						<div class="row">
-							<h2>Form </h2>
-							<hr />
-							<form class="form-horizontal">
-								<div ng-model="input" fb-form="building"
-									fb-default="defaultValue"></div>
-								
-								<div class="form-group">
-									<div class="col-md-8 col-md-offset-4"></div>
-								</div>
-							</form>
-
-						</div>
-					</div>
+				<div class="modal-body row">
+							<div class="col-xs-2 col-sm-9 "> 
+								<h2>Form </h2>
+								<form class="form-horizontal ">
+									<div ng-model="input" fb-form="building"
+										fb-default="defaultValue"></div>
+									
+									<div class="form-group">
+									</div>
+								</form>
+							</div>
 
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" ng-click="submit(input)"
 						data-dismiss="modal">Save</button>
+					<input type="text" ng-model="name" value=<%=session.getAttribute("userName")%>>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
