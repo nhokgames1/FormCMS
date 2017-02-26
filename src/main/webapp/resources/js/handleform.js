@@ -11,7 +11,7 @@
        
        $http({
      method: 'GET',
-  url: '/FormCMS/listForm'
+       url: '/FormCMS/listForm'
       }).then(function successCallback(response) {
         $scope.arrForm= response.data;
    
@@ -59,10 +59,33 @@
       
       $scope.submit = function(input) {
          
-          
-         console.log($scope.name);
         
+         console.log(input);
+        $scope.tester=input;
+       
+        $http({
+            method: 'GET',
+            url: '/FormCMS/sessionUser'
+             }).then(function successCallback(response) {
+               $scope.sessionUser= response.data;
+              $scope.dataInput=angular.toJson($scope.tester);
+                $scope.dataForm = {};
+                $scope.dataForm.formData=$scope.dataInput;
+                $scope.dataForm.user = $scope.sessionUser.fullname;
+                console.log($scope.dataForm);
+                $http({
+                  method: 'POST',
+                  url: '/FormCMS/addFormData',
+                  data : $scope.dataForm,
+                   headers : {'Content-Type': 'application/json;charset=UTF-8'} 
+                })
+
+
+        // console.log($scope.sessionUser);
+            }, function errorCallback(response) {
         
+        })
+      
       };
      }
 

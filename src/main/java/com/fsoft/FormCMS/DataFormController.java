@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fsoft.FormCMS.services.FormDataService;
 import com.fsoft.FormCMS.model.*;
@@ -38,5 +39,10 @@ public class DataFormController {
 	@ResponseBody
 	public void update(@PathVariable("id") Long id, @RequestBody DataForm df){
 			formdataservice.update(id, df);
+	}
+	@RequestMapping(value = "/data", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public ModelAndView test() {
+		return new ModelAndView("dataPage");
 	}
 }

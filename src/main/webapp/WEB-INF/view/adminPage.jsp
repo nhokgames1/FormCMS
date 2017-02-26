@@ -26,11 +26,11 @@
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
-
+<jsp:include page="header.jsp"></jsp:include>
 
 	<div class="container">
 		<!-- Header -->
-		<jsp:include page="header.jsp"></jsp:include>
+		
 		 
 		 <!-- Body -->
 		<h1>List student</h1>

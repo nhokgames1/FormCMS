@@ -97,7 +97,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" ng-click="submit(input)"
 						data-dismiss="modal">Save</button>
-					<input type="text" ng-model="name" value=<%=session.getAttribute("userName")%>>
+					
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>

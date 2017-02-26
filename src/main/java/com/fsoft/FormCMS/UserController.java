@@ -98,4 +98,11 @@ public class UserController {
 		s.invalidate();
 		return new ModelAndView("login");
 	}
+	@RequestMapping(value = "/sessionUser", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public User sessionUser(HttpServletRequest request) {
+		HttpSession s =request.getSession();
+		User usersession=(User) s.getAttribute("user");
+		return usersession;
+	}
 }

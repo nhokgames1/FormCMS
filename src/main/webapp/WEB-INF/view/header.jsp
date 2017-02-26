@@ -63,10 +63,10 @@
 			<ul class="dropdown-menu account-setting-menu">
 				<li><a href="/FormCMS/home" data-ga="" data-ga-action="click"
 					data-ga-category="Header Navigation " data-ga-title="Slack">
-						List</a></li>
-				<li><a href="#" data-ga="" data-ga-action="click"
+						List Student</a></li>
+				<li><a href="/FormCMS/data" data-ga="" data-ga-action="click"
 					data-ga-category="Header Navigation " data-ga-title="Balsamiq">
-						Add New</a></li>
+						List Data Input</a></li>
 			</ul>
 		</li>
 
