@@ -11,8 +11,8 @@
     <script src="../resources/js/jquery.min.js"></script>
     <script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../resources/js/angular.min.js"></script>
-    <script type="text/javascript" src="../resources/js/angular-form-builder.js"></script>
-    <script type="text/javascript" src="../resources/js/angular-form-builder-components.js"></script>
+    <script type="text/javascript" src="../resources/js/form-builder.js"></script>
+    <script type="text/javascript" src="../resources/js/form-builder-components.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator.min.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator-rules.min.js"></script>
     <script type="text/javascript" src="../resources/js/addform.js"></script>

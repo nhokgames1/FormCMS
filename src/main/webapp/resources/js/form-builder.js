@@ -4,7 +4,7 @@
   copyObjectToScope = function(object, scope) {
 
     /*
-    Copy object (ng-repeat="object in objects") to scope without `hashKey`.
+    Copy object
      */
     var key, value;
     for (key in object) {
@@ -21,13 +21,7 @@
       $builder = $injector.get('$builder');
       $scope.setupScope = function(formObject) {
 
-        /*
-        1. Copy origin formObject (ng-repeat="object in formObjects") to scope.
-        2. Setup optionsText with formObject.options.
-        3. Watch scope.label, .description, .placeholder, .required, .options then copy to origin formObject.
-        4. Watch scope.optionsText then convert to scope.options.
-        5. setup validationOptions
-         */
+      
         var component;
         copyObjectToScope(formObject, $scope);
         $scope.optionsText = formObject.options.join('\n');

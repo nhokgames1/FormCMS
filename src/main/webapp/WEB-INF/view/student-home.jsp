@@ -19,9 +19,9 @@
 <script src="../resources/js/handleform.js"></script>
 <script src="../resources/js/dropdown.js"></script>
 <script type="text/javascript"
-	src="../resources/js/angular-form-builder.js"></script>
+	src="../resources/js/form-builder.js"></script>
 <script type="text/javascript"
-	src="../resources/js/angular-form-builder-components.js"></script>
+	src="../resources/js/form-builder-components.js"></script>
 <script type="text/javascript"
 	src="../resources/js/angular-validator.min.js"></script>
 <script type="text/javascript"
@@ -34,11 +34,11 @@
 </head>
 
 <body ng-app="app" ng-controller="DemoController">
-
+<jsp:include page="header.jsp"></jsp:include>
 
 	<div class="container">
 		<!-- Header -->
-		<jsp:include page="header.jsp"></jsp:include>
+		
 		<h1>List student</h1>
 		<table class="table table-striped">
 			<thead>

@@ -219,11 +219,19 @@
 									ng-value="clickedUser.birthday | date:'yyyy-MM-dd" placeholder="Birthday">
 							</div>
 						</div>
+						<br><br>
 						<div class="form-group">
-						<label for="redRadio">User</label> <input id="user"
-							type="radio" ng-model="clickedUser.role" value="user" /><br /> <label
-							for="greenRadio">Admin</label> <input id="admin"
+						<div class="col-sm-2"><label >Role</label></div>
+						<div class="col-sm-10">
+						
+						<label for="redRadio">User</label> 
+						
+						<input id="user"
+							type="radio" ng-model="clickedUser.role" value="user" />
+						<label for="greenRadio">Admin</label> 
+						<input id="admin"
 							type="radio" ng-model="clickedUser.role" value="admin" /><br />
+							</div>
 					</div>
 						<br>
 					</form>
