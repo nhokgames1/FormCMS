@@ -98,7 +98,7 @@
 					<button type="button" class="btn btn-default" ng-click="submit(input)"
 						data-dismiss="modal">Save</button>
 					
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="refresh()">Close</button>
 				</div>
 			</div>
 

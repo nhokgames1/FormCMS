@@ -7,8 +7,7 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 $scope.arrStudent = response.data;
 	
 	 console.log($scope.arrStudent);
-	 $scope.cookie=$cookieStore.get('user');
-	 			console.log($scope.cookie);
+	
 
 	 //add user to server
 	 $scope.saveUser = function() {

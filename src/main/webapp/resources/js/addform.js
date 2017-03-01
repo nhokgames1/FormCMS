@@ -29,7 +29,11 @@
           headers : {'Content-Type': 'application/json;charset=UTF-8'}
         })
        
-      };         
+      };     
+      return $scope.refresh = function(){
+        $route.reload();
+
+      }    
     }
   ]);
 

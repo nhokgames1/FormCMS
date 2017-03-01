@@ -33,10 +33,10 @@
 		
 		 
 		 <!-- Body -->
-		<h1>List student</h1>
+		<h1>List User</h1>
 
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
-			data-target="#myModalAdd" ng-click="selectUser(user)">Add</button>
+		<button type="button"  class="btn btn-primary" data-toggle="modal"
+			data-target="#myModalAdd" ng-click="saveUser">Add</button>
 
 		<table class="table table-striped">
 			<thead>
@@ -52,7 +52,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in arrStudent">
+				<tr ng-repeat="user in arrStudent" ng-style="{
+				'background-color':'lightgray'
+				}">
 					<td>{{user.id}}</td>
 					<td>{{user.account}}</td>
 					<td>{{user.fullname}}</td>
@@ -195,7 +197,7 @@
 						</div>
 						<br> <br> <br>
 						<div class="form-group">
-							<label for="inputSubject" class="col-sm-2 control-label">Fullname</label>
+							<label for="inputAccount" class="col-sm-2 control-label">Fullname</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control"
 									ng-value="clickedUser.fullname" placeholder="Fullname">
@@ -203,7 +205,7 @@
 						</div>
 						<br> <br>
 						<div class="form-group">
-							<label for="inputStart" class="col-sm-2 control-label">Password
+							<label for="inputPassword" class="col-sm-2 control-label">Password
 								</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control"
@@ -212,11 +214,11 @@
 						</div>
 						<br> <br>
 						<div class="form-group">
-							<label for="inputEnd" class="col-sm-2 control-label">Birthday
+							<label for="inputBirthday" class="col-sm-2 control-label">Birthday
 								day</label>
 							<div class="col-sm-10">
 								<input type="date" class="form-control"
-									ng-value="clickedUser.birthday | date:'yyyy-MM-dd" placeholder="Birthday">
+									ng-value="clickedUser.birthday " placeholder="Birthday">
 							</div>
 						</div>
 						<br><br>

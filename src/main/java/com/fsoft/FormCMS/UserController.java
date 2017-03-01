@@ -41,8 +41,14 @@ public class UserController {
 	}
 	@RequestMapping(value = "/admin", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
-	public ModelAndView adminPage() {
-		return new ModelAndView("adminPage");
+	public ModelAndView adminPage(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		User usersession=(User) session.getAttribute("user");
+		if (usersession.getRole().equals("admin")) {
+			return new ModelAndView("adminPage");
+		}
+						return new ModelAndView("redirect:/FormCMS/notpermit");
+		
 	}
 
 	@RequestMapping(value = "/listUser", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
@@ -104,5 +110,12 @@ public class UserController {
 		HttpSession s =request.getSession();
 		User usersession=(User) s.getAttribute("user");
 		return usersession;
+	}
+
+	@RequestMapping(value = "/notpermit")
+	@ResponseBody
+	public ModelAndView notpermit() {
+		return new ModelAndView("notallow");
+		
 	}
 }

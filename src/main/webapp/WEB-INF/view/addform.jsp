@@ -43,7 +43,7 @@
 		
 		<label>Form Name</label>
 	<input ng-model="nameform" type="text" class="form-control"
-										id= placeholder="Form name" >	
+										requred="required" placeholder="Form name" >	
 										<br>
 				 <div class="col-md-8 col-md-offset-4">
                     <input type="submit" ng-click="submit()" class="btn btn-default"/>
