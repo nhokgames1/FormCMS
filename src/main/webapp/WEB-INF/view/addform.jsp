@@ -18,9 +18,9 @@
     <script type="text/javascript" src="../resources/js/addform.js"></script>
 <title>Create New Form</title>
 </head>
-<body class="container" ng-controller="DemoController">
+<body  ng-controller="DemoController">
 <jsp:include page="header.jsp"></jsp:include>
-   <div class="row">
+   <div class="container">
         
         <hr/>
 
@@ -39,7 +39,7 @@
             <div fb-components></div>
         </div>
     </div>
-		<div class="row">
+		<div class="container">
 		
 		<label>Form Name</label>
 	<input ng-model="nameform" type="text" class="form-control"

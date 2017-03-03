@@ -28,7 +28,7 @@
 	src="../resources/js/angular-validator-rules.min.js"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Danh sách Form</title>
+<title>List Form</title>
 
 
 </head>
