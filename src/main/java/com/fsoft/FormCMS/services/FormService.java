@@ -29,5 +29,7 @@ public class FormService {
 		formdao.save(form);
 		
 	}
-	
+	public List<Form> getFormByUser(String username) {
+		return formdao.getFormByUsername(username);
+	}
 }

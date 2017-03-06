@@ -147,7 +147,7 @@
 							class="form-control" ng-model="user.fullname">
 					</div>
 					<div class="form-group">
-						<label for="text">Pasword</label> <input type="text"
+						<label for="text">Pasword</label> <input type="password"
 							class="form-control" ng-model="user.password">
 					</div>
 					<div class="form-group">
@@ -208,7 +208,7 @@
 							<label for="inputPassword" class="col-sm-2 control-label">Password
 								</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control"
+								<input type="password" class="form-control"
 									ng-value="clickedUser.password" placeholder="password">
 							</div>
 						</div>

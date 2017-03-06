@@ -1,5 +1,6 @@
 package com.fsoft.FormCMS;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +34,7 @@ public class UserController {
 	public ModelAndView home(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		User usersession=(User) session.getAttribute("user");
-		if (usersession.getRole().equals("admin")) {
+		if (usersession  !=null && usersession.getRole().equals("admin")) {
 			return new ModelAndView("redirect:/FormCMS/admin");
 		}
 						return new ModelAndView("redirect:/FormCMS/student");
@@ -117,5 +118,10 @@ public class UserController {
 	public ModelAndView notpermit() {
 		return new ModelAndView("notallow");
 		
+	}
+	@RequestMapping(value = "/listAllAccount", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public ArrayList<String> getAllAccount() {
+		return userservice.getAllAccount();
 	}
 }

@@ -71,4 +71,13 @@ public class FormController {
 	public ModelAndView test() {
 		return new ModelAndView("test");
 	}
+	@RequestMapping(value = "/listFormByUser", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public List<Form> getFormByUser(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		User usersession=(User) session.getAttribute("user");		
+		String username= usersession.getAccount();
+		return formservice.getFormByUser(username);
+	}
+
 }

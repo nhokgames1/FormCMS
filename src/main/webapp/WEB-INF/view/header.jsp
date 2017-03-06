@@ -12,7 +12,7 @@
 	href="../resources/css/jquery-ui.min.css">
 <script src="../resources/js/jquery.min.js"></script>
 <script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../resources/js/angular.min.js"></script>
+
 
 <script src="../resources/js/dropdown.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">

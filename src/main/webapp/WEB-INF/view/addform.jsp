@@ -16,6 +16,7 @@
     <script type="text/javascript" src="../resources/js/angular-validator.min.js"></script>
     <script type="text/javascript" src="../resources/js/angular-validator-rules.min.js"></script>
     <script type="text/javascript" src="../resources/js/addform.js"></script>
+     <script type="text/javascript" src="../resources/js/script.js"></script>
 <title>Create New Form</title>
 </head>
 <body  ng-controller="DemoController">
@@ -42,15 +43,24 @@
 		<div class="container">
 		
 		<label>Form Name</label>
-	<input ng-model="nameform" type="text" class="form-control"
+	<input ng-model="nameform" type="text" class="form-control col-md-6"
 										requred="required" placeholder="Form name" >	
-										<br>
-				 <div class="col-md-8 col-md-offset-4">
-                    <input type="submit" ng-click="submit()" class="btn btn-default"/>
-                </div>						
-		
-		
+										<br> <br><br><br>
+	<label for="Autocomplete">Form For User :</label>
+     
+         <select ng-model="userform" ng-options="x for x in names">  
+        
+	
 		 </div>
+		 <br> 
+		 <div class="container">
+				
+				 
+				 
+				 
+				
+                    <input type="submit" ng-click="submit()" class="btn btn-default"/>
+                </div>	
    <!-- <div class="row">
         <h2>Form</h2>
         <hr/>

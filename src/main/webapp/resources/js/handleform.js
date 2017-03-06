@@ -11,7 +11,7 @@
        
        $http({
      method: 'GET',
-       url: '/FormCMS/listForm'
+       url: '/FormCMS/listFormByUser'
       }).then(function successCallback(response) {
         $scope.arrForm= response.data;
    
@@ -27,35 +27,35 @@
       $scope.array = angular.fromJson($scope.tempdata.formdata);
       
         for (i=0;i<$scope.array.length;i++) {
-          $builder.removeFormObject('building',$scope.array.length);
+          
           $builder.addFormObject('building',$scope.array[i]);
         }
 
-      var checkbox, textbox,test;
-      textbox = $builder.addFormObject('test', {
-        id: 'textbox',
-        component: 'textInput',
-        label: 'hehehe',
-        description: '',
-        placeholder: 'Tester',
-        required: true,
-        editable: true
-      });
-      checkbox = $builder.addFormObject('test', {
-        id: 'checkbox',
-        component: 'checkbox',
-        label: 'Pets',
-        description: 'Do you have any pets?',
-        options: ['Dog', 'Cat']
-      });
-      $builder.addFormObject('test', {
-        component: 'sampleInput'
-      });        
-      $scope.form = $builder.forms['building'];   
-      $scope.input = [];
-      $scope.defaultValue = {};
-      $scope.defaultValue[textbox.id] = 'default value';
-      $scope.defaultValue[checkbox.id] = [true];
+      // var checkbox, textbox,test;
+      // textbox = $builder.addFormObject('test', {
+      //   id: 'textbox',
+      //   component: 'textInput',
+      //   label: 'hehehe',
+      //   description: '',
+      //   placeholder: 'Tester',
+      //   required: true,
+      //   editable: true
+      // });
+      // checkbox = $builder.addFormObject('test', {
+      //   id: 'checkbox',
+      //   component: 'checkbox',
+      //   label: 'Pets',
+      //   description: 'Do you have any pets?',
+      //   options: ['Dog', 'Cat']
+      // });
+      // $builder.addFormObject('test', {
+      //   component: 'sampleInput'
+      // });        
+      // $scope.form = $builder.forms['building'];   
+      // $scope.input = [];
+      // $scope.defaultValue = {};
+      // $scope.defaultValue[textbox.id] = 'ahihi';
+      // $scope.defaultValue[checkbox.id] = [true];
       
       $scope.submit = function(input) {
          
