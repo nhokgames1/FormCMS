@@ -11,13 +11,19 @@
 	href="../resources/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css"
 	href="../resources/css/jquery-ui.min.css">
-
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/seachbox.css">
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/table.css">
+	<link rel="stylesheet" type="text/css"
+	href="../resources/css/button.css">
 <script src="../resources/js/jquery-1.11.3.min.js"></script>
 <script src="../resources/js/jquery-ui.min.js"></script>
 <script src="../resources/js/angular.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
 <script src="../resources/js/User.js"></script>
 <script src="../resources/js/dropdown.js"></script>
+<script src="../resources/js/dirPagination.js"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Danh sách Student</title>
@@ -34,15 +40,39 @@
 		 
 		 <!-- Body -->
 		<h1>List User</h1>
-
-		<button type="button"  class="btn btn-primary" data-toggle="modal"
+<div class="pull-right">
+	<div class="row">
+	<div class="col-md-8"></div>
+        <div class="col-md-4">
+    		
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="User" ng-model="searchName" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" ng-click="search()">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<br><br><br><br>
+		<div class="col-md-10"></div><button type="button"  class="btn btn-primary" data-toggle="modal"
 			data-target="#myModalAdd" ng-click="saveUser">Add</button>
-
-		<table class="table table-striped">
+ 
+		<table class="table table-striped custab">
+	
 			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Account</th>
+				<tr><br><br>
+				<div></div>
+					  <div  ng-if="message" class="alert alert-danger alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>{{message}}</strong> 
+  </div>
+					<th >ID</th>
+					<th >Account</th>
 					<th>FullName</th>
 					<th>Password</th>
 					<th>Birthday</th>
@@ -52,9 +82,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in arrStudent" ng-style="{
-				'background-color':'lightgray'
-				}">
+				<tr dir-paginate="user in arrStudent | filter:searchName | itemsPerPage:5">
 					<td>{{user.id}}</td>
 					<td>{{user.account}}</td>
 					<td>{{user.fullname}}</td>
@@ -62,18 +90,23 @@
 					<td>{{user.birthday}}</td>
 					<td>{{user.role}}</td>
 					<td>
-						<button type="button" class="btn btn-info btn-lg"
+						<button type="button" class="btn btn-primary btn-circle btn-lg"
 							data-toggle="modal" data-target="#myModalEdit"
-							ng-click="selectUser(user)">Edit</button>
-						<button type="button" class="btn btn-info btn-lg"
+							ng-click="selectUser(user)"><i class="glyphicon glyphicon-list"></i></button>
+							
+						<button type="button" class="btn btn-danger btn-circle btn-lg"
 							data-toggle="modal" data-target="#myModalDelete"
-							ng-click="selectUser(user)">Delete</button>
+							ng-click="selectUser(user)"><i class="glyphicon glyphicon-remove"> </i></button>
 
 					</td>
 				</tr>
 			</tbody>
 		</table>
-
+<div class="col-md-4"><dir-pagination-controls
+       										max-size="5"
+       										direction-links="true"
+      										 boundary-links="true" >
+   					</dir-pagination-controls></div>
 	</div>
 
 	<div id="myModal" class="modal fade" role="dialog">
@@ -168,8 +201,8 @@
 				</div>
 				<div class="modal-footer">
 					<button id="btnAddUser" ng-click="saveUser()"
-						class="btn btn-default" type="button" data-dismiss="modal">Add</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						class="btn btn-info btn-circle btn-lg" type="button" data-dismiss="modal" ><i class="glyphicon glyphicon-ok"></i></button>
+					<button type="button" class="btn btn-warning btn-circle btn-lg" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i></button>
 				</div>
 			</div>
 
