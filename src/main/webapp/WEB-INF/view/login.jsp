@@ -14,9 +14,8 @@
 <script src="../resources/js/jquery-ui.min.js"></script>
 <script src="../resources/js/angular.min.js"></script>
 <script src="../resources/js/bootstrap.min.js"></script>
-<script src="../resources/js/User.js"></script>
+<script src="../resources/js/login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
-
 <script src="../resources/js/angular-route.js"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

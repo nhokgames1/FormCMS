@@ -18,7 +18,7 @@ app.controller('myCtrl', function($scope,$http,$window) {
                 headers : {'Content-Type': 'application/json;charset=UTF-8'} 
 	 	})
 	 	.error(function(data){
-	 			$scope.message= "Failed to  Add new user"
+	 			// $scope.messages= "Failed to  Add new user";
 	 	})
 	 };	
 	 //get user into field
@@ -82,7 +82,6 @@ app.controller('myCtrl', function($scope,$http,$window) {
 	 		if ($scope.data==true) {
 	 			window.location.href = "http://localhost:8080/FormCMS/home";
 	 			
-
 
 	 		}
 	 		else 

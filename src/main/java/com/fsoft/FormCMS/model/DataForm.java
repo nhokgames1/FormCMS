@@ -12,6 +12,14 @@ import javax.persistence.Table;
 public class DataForm {
 	private long id;
 	private String formData;
+	private String formName;
+	@Column(name="fornname")
+	public String getFormname() {
+		return formName;
+	}
+	public void setFormname(String formname) {
+		this.formName = formname;
+	}
 	private String user;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,8 +44,9 @@ public class DataForm {
 	public void setUser(String user) {
 		this.user = user;
 	}
-	public DataForm(long id, String formData, String user) {
+	public DataForm(long id, String formData, String user,String formName) {
 		super();
+		this.formName=formName;
 		this.id = id;
 		this.formData = formData;
 		this.user = user;
