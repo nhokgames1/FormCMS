@@ -124,4 +124,9 @@ public class UserController {
 	public ArrayList<String> getAllAccount() {
 		return userservice.getAllAccount();
 	}
+	@RequestMapping(value = "/checkUser", method = RequestMethod.POST, produces = { "application/json; charset=UTF-8" })
+	@ResponseBody
+	public void checkUser(@RequestBody String user) {
+		userservice.checkExistUser(user);
+	}
 }

@@ -55,4 +55,12 @@ public class UserService {
 	public ArrayList<String> getAllAccount() {
 		return userdao.getAllAccount();
 	}
+	public boolean checkExistUser(String user) {
+		User s=userdao.getUserByName(user);
+		if (user!=null) {
+			return true;
+		}
+		return false;
+			
+	}
 }
